@@ -27,7 +27,7 @@ the protobuf is used to implement the api in 3ways:
 
 `go get -u github.com/golang/protobuf/protoc-gen-go`
 
-## comple .proto
+## compile .proto
 
 `protoc -I=$SRC_DIR --go_out=$DST_DIR $SRC_DIR/addressbook.proto`
 
