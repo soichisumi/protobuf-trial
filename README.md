@@ -1,5 +1,20 @@
 # protobuf-sample
 
+sample of protocol buffer with golang
+
+this sample implements two api by using protobuf:
+1. adduser
+2. getuser  
+
+
+the protobuf is used to implement the api in 3ways:
+
+1. use protobuf as type definition tool (normal.go)
+2. use protobuf for rpc (rpc.go)
+3. use protobuf for grpc (gprc.go)
+
+
+ 
 ## install protoc
 
 1. install brotobuf-all-x.x.x from [protobuf](https://developers.google.com/protocol-buffers/docs/downloads)
@@ -18,6 +33,7 @@
 
 `protoc -I=$SRC_DIR --go_out=$DST_DIR $SRC_DIR/addressbook.proto`
 
+## for more info
 
-for more info :
-https://developers.google.com/protocol-buffers/docs/proto3
+tutorial: https://developers.google.com/protocol-buffers/docs/gotutorial#compiling-your-protocol-buffers
+doc: https://developers.google.com/protocol-buffers/docs/proto3
