@@ -1,0 +1,28 @@
+syntax = "proto3";
+package pbtrial;
+
+message User {
+    string name = 1;
+    int32 age = 2;
+}
+
+service UserService {
+    rpc AddUser (AddUserRequest) returns (AddUserResponse);
+    rpc GetUser (GetUserRequest) returns (GetUserResponse);
+    rpc DeleteUser (DeleteUserRequest) returns (DeleteUserRequest);
+}
+
+message AddUserRequest {
+    User user = 1;
+}
+message AddUserResponse{}
+
+message GetUserRequest {
+    string username = 1;
+}
+message GetUserResponse{}
+
+message DeleteUserRequest {
+    string username = 1;
+}
+message DeleteUserResponse{}
