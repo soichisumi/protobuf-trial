@@ -12,8 +12,6 @@ the protobuf is used to implement the api in 3ways:
 1. use protobuf as type definition tool (normal.go)
 2. use protobuf for rpc (rpc.go)
 3. use protobuf for grpc (gprc.go)
-
-
  
 ## install protoc
 
