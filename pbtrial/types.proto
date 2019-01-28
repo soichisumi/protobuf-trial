@@ -23,7 +23,6 @@ service UserService {
             body: "*"
         };
     };
-    rpc DeleteUser (DeleteUserRequest) returns (DeleteUserRequest);
 }
 
 message AddUserRequest {

@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"github.com/soichisumi/protobuf-trial/pbtrial"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 	"log"
 	"net"
-	"net/http"
 )
 
 //var (
@@ -29,7 +28,11 @@ func main() {
 	server := NewServer()
 	s := grpc.NewServer()
 
-	pbtrial.RegisterUserServiceServer()
+	pbtrial.RegisterUserServiceServer(s, server)
+	reflection.Register(s)
+	if err := s.Serve(lis); err != nil {
+		log.Fatalln(err)
+	}
 
 }
 

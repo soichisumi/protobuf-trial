@@ -8,18 +8,18 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-type Server struct {
+type UserServiceServer struct {
 	Users map[string]pbtrial.User //todo: goroutine unsafe
 }
 
-func NewServer() Server {
+func NewServer() *UserServiceServer {
 	userDB := make(map[string]pbtrial.User)
-	return Server{
+	return &UserServiceServer{
 		Users: userDB,
 	}
 }
 
-func (s *Server) AddUser(ctx context.Context, req *pbtrial.AddUserRequest) (*pbtrial.AddUserResponse, error) {
+func (s *UserServiceServer) AddUser(ctx context.Context, req *pbtrial.AddUserRequest) (*pbtrial.AddUserResponse, error) {
 	user := req.User
 	if user.Name == "" {
 		fmt.Printf("username is empty. user: %+v\n", user)
@@ -30,7 +30,7 @@ func (s *Server) AddUser(ctx context.Context, req *pbtrial.AddUserRequest) (*pbt
 	return &pbtrial.AddUserResponse{}, nil
 }
 
-func (s *Server) GetUser(ctx context.Context, req *pbtrial.GetUserRequest) (*pbtrial.GetUserResponse, error) {
+func (s *UserServiceServer) GetUser(ctx context.Context, req *pbtrial.GetUserRequest) (*pbtrial.GetUserResponse, error) {
 	username := req.Username
 	if username == "" {
 		fmt.Printf("username is empty. username: %s\n", username)
