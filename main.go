@@ -13,7 +13,7 @@ import (
 //)
 
 const (
-	port = "8080"
+	port = ":8080"
 )
 
 //func init(){
@@ -33,6 +33,7 @@ func main() {
 	if err := s.Serve(lis); err != nil {
 		log.Fatalln(err)
 	}
+
 
 }
 

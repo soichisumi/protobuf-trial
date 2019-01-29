@@ -9,7 +9,7 @@ import (
 	"github.com/soichisumi/protobuf-trial/pbtrial"
 	"net/http"
 )
-
+var userDB map[string]pbtrial.User
 func normAddUser(w http.ResponseWriter, r *http.Request){
 	fmt.Println("... normAddUser")
 	if r.Method != "POST" {
